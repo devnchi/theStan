@@ -9,7 +9,6 @@ sendFetch.addEventListener('click', () => {
       .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
       .then(response => {
         console.log(response)
-        document.querySelector('#showLyrics').innerHTML = "";
         let realResponse = document.createElement('p');
         realResponse.innerText = response.lyrics;
         document.querySelector('#showLyrics').appendChild(realResponse);
@@ -25,7 +24,6 @@ sendFetch.addEventListener('click', () => {
     .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
     .then(response => {
       console.log(response)
-      document.querySelector('#showLyrics').innerHTML = "";
       let artistInfo = document.createElement('p');
       artistInfo.innerText = response.artist.bio.content;
       document.querySelector('#artistInfo').appendChild(artistInfo);
@@ -41,7 +39,6 @@ sendFetch.addEventListener('click', () => {
     .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
     .then(response => {
       console.log(response)
-          document.querySelector('#artistFlick').innerHTML = "";
           let artistPic = document.createElement('img');
           artistPic.setAttribute("src", `${response.artist.image[5]['#text']}`);
           document.querySelector('#artistFlick').appendChild(artistPic);
